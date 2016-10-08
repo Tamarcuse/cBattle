@@ -54,7 +54,7 @@ void CyberPC::Run(const CyberDNS & server){
 				it != cyber_pc_connections_.end(); ++it){
 			server.GetCyberPC(*it).Infect(*cyber_worm_);
 		}
-	}cyber_pc_time_to_infect_
+	}
 }
 
 void CyberPC::Disinfect(){
