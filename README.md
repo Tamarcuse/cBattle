@@ -1,2 +1,2 @@
 # cBattle
-Re-Doing assignment 1 by myself
+Re-Doing assignment 1
