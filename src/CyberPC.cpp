@@ -50,9 +50,14 @@ void CyberPC::Infect(CyberWorm & worm){
 
 void CyberPC::Run(const CyberDNS & server){
 	if (cyber_worm_ != NULL) {
-		for(std::vector<std::string>::iterator it = cyber_pc_connections_.begin();
-				it != cyber_pc_connections_.end(); ++it){
-			server.GetCyberPC(*it).Infect(*cyber_worm_);
+		if(cyber_pc_time_to_infect_ == 0){
+			for(std::vector<std::string>::iterator it = cyber_pc_connections_.begin();
+					it != cyber_pc_connections_.end(); ++it){
+				server.GetCyberPC(*it).Infect(*cyber_worm_);
+			}
+		}
+		else if (cyber_pc_time_to_infect_ > 0) {
+			--cyber_pc_time_to_infect_;
 		}
 	}
 }
