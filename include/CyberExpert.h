@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../include/cyberpc.h"
+#include "CyberPC.h"
 
 
 class CyberExpert
@@ -19,7 +19,7 @@ private:
 public:
     CyberExpert(std::string cyber_expert_name_, int cyber_expert_work_time_, int cyber_expert_rest_time_, int cyber_expert_efficiency_);
  	void Clean(CyberPC & cyber_pc);
-	// Add your own functions here
+
 };
 
 

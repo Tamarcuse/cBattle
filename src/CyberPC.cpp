@@ -33,6 +33,7 @@ const std::string CyberPC::getName(){
 
 void CyberPC::AddConnection(std::string  second_pc){
 	cyber_pc_connections_.push_back(second_pc);
+	std::cout << cyber_pc_name_ << " now connected to " << second_pc << std::endl;
 }
 
 void CyberPC::Infect(CyberWorm & worm){
@@ -40,7 +41,7 @@ void CyberPC::Infect(CyberWorm & worm){
 		deleteWorm();
 		cyber_worm_ = new CyberWorm(worm);
 		cyber_pc_time_to_infect_ = worm.getDormancy();
-		std::cout << "Hack occurred on  " << cyber_pc_name_ << std::endl;
+		std::cout << "Hack occurred on " << cyber_pc_name_ << std::endl;
 		std::cout << cyber_pc_name_ << " is now infected by " << worm.getName() << std::endl;
 	}
 	else{
@@ -51,6 +52,7 @@ void CyberPC::Infect(CyberWorm & worm){
 void CyberPC::Run(const CyberDNS & server){
 	if (cyber_worm_ != NULL) {
 		if(cyber_pc_time_to_infect_ == 0){
+			std::cout << cyber_pc_name_ << " infecting..." << std::endl;
 			for(std::vector<std::string>::iterator it = cyber_pc_connections_.begin();
 					it != cyber_pc_connections_.end(); ++it){
 				server.GetCyberPC(*it).Infect(*cyber_worm_);
@@ -63,7 +65,7 @@ void CyberPC::Run(const CyberDNS & server){
 }
 
 void CyberPC::Disinfect(){
-	std::cout << cyber_worm_->getName() << " successfully removed from " << cyber_pc_name_ << std::endl;
+	std::cout << "Worm " << cyber_worm_->getName() << " successfully removed from " << cyber_pc_name_ << std::endl;
 	deleteWorm();
 }
 

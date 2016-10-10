@@ -7,10 +7,7 @@
 
 #include "../include/CyberDNS.h"
 
-CyberDNS::CyberDNS() {
-	// TODO Auto-generated constructor stub
-
-}
+CyberDNS::CyberDNS() {}
 
 void CyberDNS::AddPC(CyberPC & cyber_pc_){
 	std::cout << "Adding to server: " << cyber_pc_.getName() << std::endl;

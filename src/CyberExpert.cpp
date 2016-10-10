@@ -13,6 +13,6 @@ CyberExpert::CyberExpert(std::string cyber_expert_name_,
 		cyber_expert_rest_time_(cyber_expert_rest_time_), cyber_expert_efficiency_(cyber_expert_efficiency_){}
 
 void CyberExpert::Clean(CyberPC & cyber_pc){
-
+	cyber_pc.Disinfect();
 }
 

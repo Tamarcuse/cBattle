@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include "../include/cyberPC.h"
+#include "CyberPC.h"
 
 class CyberPC; //Forward deceleration
 

@@ -2,8 +2,9 @@
 #define CYBER_PC
 #include <iostream>
 #include <string>
-#include "../include/Cyberworm.h"
-#include "../include/Cyberdns.h"
+#include "CyberWorm.h"
+#include "CyberDNS.h"
+
 
 class CyberDNS; // Forward decleration
 
